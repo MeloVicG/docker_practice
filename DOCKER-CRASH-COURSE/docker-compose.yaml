@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api:
+  # find docker files in build path and build images in container
+    build: ./api 
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./api:/app
+      - ./app/node_modules 
+    
+# build image in api folder
